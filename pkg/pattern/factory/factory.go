@@ -38,7 +38,7 @@ type PlusOperator struct {
 
 //Result 获取结果
 func (o PlusOperator) Result() int {
-	return o.a + o.b
+	return o.a + 1
 }
 
 //MinusOperatorFactory 是 MinusOperator 的工厂类
@@ -58,5 +58,5 @@ type MinusOperator struct {
 
 //Result 获取结果
 func (o MinusOperator) Result() int {
-	return o.a - o.b
+	return o.a - 1
 }

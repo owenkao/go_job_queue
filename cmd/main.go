@@ -7,10 +7,11 @@ import (
 	"sync"
 	"time"
 
-	"pkg/owen"
+	"github.com/owenkao/go_job_queue/pkg/owen"
+	"github.com/owenkao/go_job_queue/pkg/singleton"
 )
 
-const maxWorkers = 10
+const maxWorkers = 1
 
 type job struct {
 	name     string
@@ -25,6 +26,7 @@ func doWork(id int, j job) {
 
 func main() {
 	owen.Init()
+	singleton.GoInstance()
 	// channel for jobs
 	jobs := make(chan job)
 

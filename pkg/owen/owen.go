@@ -8,5 +8,5 @@ func Init() {
 }
 
 func init() {
-	fmt.Println("world module init function")
+	fmt.Println("world1 module init function")
 }

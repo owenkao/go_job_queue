@@ -2,19 +2,17 @@ package singleton
 
 import "sync"
 
-var (
-	goInstance *Instance
-	once       sync.Once
-)
+//Singleton 是单例模式类
+type Singleton struct{}
 
-// 使用go 实现单例模式
-func GoInstance(name string) *Instance {
-	if goInstance == nil {
-		once.Do(func() {
-			goInstance = &Instance{
-				Name: name,
-			}
-		})
-	}
-	return goInstance
+var singleton *Singleton
+var once sync.Once
+
+//GetInstance 用于获取单例模式对象
+func GetInstance() *Singleton {
+	once.Do(func() {
+		singleton = &Singleton{}
+	})
+
+	return singleton
 }
